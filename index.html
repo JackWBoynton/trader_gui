@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>trading bot</title>
+</head>
+<style>
+    table,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <h1>trading bot</h1>
+    current balance: <span id='balance'></span> XBT = $<span id='usd'></span> net=> <span id='balance_change'></span> %
+    <!-- You can also require other files to run in this process -->
+    <br>
+    <br> SIDE: <span id='side'></span>
+    <br> PRICE: $<span id='price'></span>
+    <br> Leverage: <span id='leverage'></span>
+    <br> Profit: <span id='profit'></span> XBT
+    <table id='trades'>
+        <tr>
+            <td>side</td>
+            <td>open</td>
+            <td>sl</td>
+            <td>tp</td>
+            <td>close</td>
+            <td>profit</td>
+
+        </tr>
+    </table>
+    <br>
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+        <div id="tradingview_5d30a"></div>
+        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BITMEX-XBTUSD/" rel="noopener" target="_blank"><span class="blue-text">XBTUSD Chart</span></a> by TradingView</div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+            new TradingView.widget({
+                "width": 980,
+                "height": 610,
+                "symbol": "BITMEX:XBTUSD",
+                "interval": "1",
+                "timezone": "America/New_York",
+                "theme": "Light",
+                "style": "1",
+                "locale": "en",
+                "toolbar_bg": "#f1f3f6",
+                "enable_publishing": false,
+                "allow_symbol_change": true,
+                "container_id": "tradingview_5d30a"
+            });
+        </script>
+    </div>
+    <!-- TradingView Widget END -->
+    <script src="./renderer.js"></script>
+</body>
+
+</html>
